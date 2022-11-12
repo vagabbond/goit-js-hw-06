@@ -36,8 +36,7 @@ const addDivEl = () => {
 };
 btnCreateEl.addEventListener("click", addDivEl);
 const destroyBoxes = () => {
-  while (boxEl.firstChild) {
-    boxEl.firstChild.remove();
-  }
+  boxEl.innerHTML = "";
 };
 btnDestroyEl.addEventListener("click", destroyBoxes);
+console.log(boxEl);

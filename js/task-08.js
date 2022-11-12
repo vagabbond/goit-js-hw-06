@@ -6,12 +6,17 @@ const inputPasswordEl = document.querySelector(
 const formDone = (event) => {
   event.preventDefault();
   if (inputEmailEl.value === "" || inputPasswordEl.value === "") {
-    alert("Не всі поля заповнені!");
+    return alert("Не всі поля заповнені!");
   }
-  const formData = new FormData(event.currentTarget);
-  const formDataLog = formData.forEach((name, key) => {
-    console.log(key, ":", name);
-  });
+  const formEl = event.currentTarget.elements;
+
+  const email = formEl.email.value;
+  const password = formEl.password.value;
+  const formData = {
+    email,
+    password,
+  };
+  console.log(formData);
   return formData;
 };
 form.addEventListener("submit", formDone);
